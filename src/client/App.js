@@ -4,7 +4,7 @@ import Login from './components/Login';
 
 const App = () => {
   return (
-    <div className="flex flex-col items-center justify-center bg-blue-900 min-h-screen p-8">
+    <div className="flex flex-col items-center justify-start bg-blue-900 min-h-screen p-8">
       <Header />
       <Login />
     </div>
