@@ -31,6 +31,7 @@ module.exports = (env) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
+        title: 'Unistat',
         template: './src/client/index.html'
       })
     ]
