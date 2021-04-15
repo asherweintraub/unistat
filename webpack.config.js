@@ -1,9 +1,12 @@
-module.exports = (env,) => {
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+module.exports = (env) => {
 
   return {
     mode: env.WEBPACK_SERVE ? 'development' : 'production',
-    entry: './index.js',
+    entry: './src/client/index.js',
     output: {
+      path: __dirname + '/dist',
       filename: 'bundle.js',
     },
     module: {
@@ -22,5 +25,10 @@ module.exports = (env,) => {
         },
       ],
     },
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: './src/client/index.html'
+      })
+    ]
   }
 }
