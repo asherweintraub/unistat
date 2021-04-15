@@ -23,6 +23,10 @@ module.exports = (env) => {
             },
           ],
         },
+        {
+          test: /\.(css|pcss)$/,
+          use: ['style-loader','css-loader','postcss-loader'],
+        },
       ],
     },
     plugins: [
