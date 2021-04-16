@@ -29,6 +29,16 @@ module.exports = (env) => {
         },
       ],
     },
+    devServer: {
+      port: 8080,
+      historyApiFallback: true,
+      proxy: {
+        '/api': {
+          target: 'http://localhost:3000',
+          pathRewrite: { '^/api': '' }
+        }
+      }
+    },
     plugins: [
       new HtmlWebpackPlugin({
         title: 'Unistat',
