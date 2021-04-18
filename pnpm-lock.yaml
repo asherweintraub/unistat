@@ -2,8 +2,10 @@ lockfileVersion: 5.3
 
 specifiers:
   '@babel/core': ^7.13.15
+  '@babel/plugin-transform-runtime': ^7.13.15
   '@babel/preset-env': ^7.13.15
   '@babel/preset-react': ^7.13.13
+  '@babel/runtime': ^7.13.10
   '@heroicons/react': ^1.0.1
   autoprefixer: ^10.2.5
   babel-loader: ^8.2.2
@@ -24,6 +26,7 @@ specifiers:
   webpack-dev-server: ^3.11.2
 
 dependencies:
+  '@babel/runtime': 7.13.10
   '@heroicons/react': 1.0.1_react@17.0.2
   express: 4.17.1
   puppeteer: 8.0.0
@@ -34,6 +37,7 @@ dependencies:
 
 devDependencies:
   '@babel/core': 7.13.15
+  '@babel/plugin-transform-runtime': 7.13.15_@babel+core@7.13.15
   '@babel/preset-env': 7.13.15_@babel+core@7.13.15
   '@babel/preset-react': 7.13.13_@babel+core@7.13.15
   autoprefixer: 10.2.5_postcss@8.2.10
@@ -879,6 +883,22 @@ packages:
       '@babel/helper-plugin-utils': 7.13.0
     dev: true
 
+  /@babel/plugin-transform-runtime/7.13.15_@babel+core@7.13.15:
+    resolution: {integrity: sha512-d+ezl76gx6Jal08XngJUkXM4lFXK/5Ikl9Mh4HKDxSfGJXmZ9xG64XT2oivBzfxb/eQ62VfvoMkaCZUKJMVrBA==}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.13.15
+      '@babel/helper-module-imports': 7.13.12
+      '@babel/helper-plugin-utils': 7.13.0
+      babel-plugin-polyfill-corejs2: 0.2.0_@babel+core@7.13.15
+      babel-plugin-polyfill-corejs3: 0.2.0_@babel+core@7.13.15
+      babel-plugin-polyfill-regenerator: 0.2.0_@babel+core@7.13.15
+      semver: 6.3.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@babel/plugin-transform-shorthand-properties/7.12.13_@babel+core@7.13.15:
     resolution: {integrity: sha512-xpL49pqPnLtf0tVluuqvzWIgLEhuPpZzvs2yabUHSKRNlN7ScYU7aMlmavOeyXJZKgZKQRBlh8rHbKiJDraTSw==}
     peerDependencies:
@@ -1054,7 +1074,6 @@ packages:
     resolution: {integrity: sha512-4QPkjJq6Ns3V/RgpEahRk+AGfL0eO6RHHtTWoNNr5mO49G6B5+X6d6THgWEAvTrznU5xYpbAlVKRYcsCgh/Akw==}
     dependencies:
       regenerator-runtime: 0.13.7
-    dev: true
 
   /@babel/template/7.12.13:
     resolution: {integrity: sha512-/7xxiGA57xMo/P2GVvdEumr8ONhFOhfgq2ihK3h1e6THqzTAkHbkXgB0xI9yeTfIUoH3+oAeHhqm/I43OTbbjA==}
@@ -4544,7 +4563,6 @@ packages:
 
   /regenerator-runtime/0.13.7:
     resolution: {integrity: sha512-a54FxoJDIr27pgf7IgeQGxmqUNYrcV338lf/6gH456HZ/PhX+5BcwHXG9ajESmwe6WRO0tAzRUrRmNONWgkrew==}
-    dev: true
 
   /regenerator-transform/0.14.5:
     resolution: {integrity: sha512-eOf6vka5IO151Jfsw2NO9WpGX58W6wWmefK3I1zEGr0lOD0u8rwPaNqQL1aRxUaxLeKO3ArNh3VYg1KbaD+FFw==}
