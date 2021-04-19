@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --node-env development",
+    "start": "run-p dev:*",
+    "dev:webpack": "webpack serve --node-env development",
+    "dev:api": "nodemon ./src/api",
     "build": "webpack --node-env production"
   },
   "keywords": [],
