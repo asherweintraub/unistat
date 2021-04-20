@@ -15,7 +15,7 @@ const App = () => {
   return (
     <div className="flex flex-col items-center justify-start bg-blue-900 min-h-screen p-8">
       <Header>
-        <Options options={options} setOptions={setOptions} />
+        { schools.length ? <Options options={options} setOptions={setOptions} /> : null }
       </Header>
       { schools.length
         ? <Schools schools={schools} options={options} />
