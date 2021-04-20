@@ -3,7 +3,7 @@ import { RefreshIcon } from '@heroicons/react/outline'
 
 import Card from './Card';
 
-const Login = ({ setSchools }) => {
+const Login = ({ schools, setSchools }) => {
   const [formData, setFormData] = useState();
   const [loading, setLoading] = useState(false);
 
@@ -18,10 +18,15 @@ const Login = ({ setSchools }) => {
     e.preventDefault();
     setLoading(true);
 
-    const res = await fetch(`/api/list/?username=${formData.username}&password=${formData.password}`, { method: 'GET' });
-    const list = await res.json();
-
-    setSchools(list);
+    const res = await fetch(`/api/data/?username=${formData.username}&password=${formData.password}`, { method: 'GET' });
+    const reader = res.body.getReader();
+    
+    while (true) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      const data = new TextDecoder().decode(value);
+      setSchools(schools => [...schools, JSON.parse(data)]);
+    }
   }
 
   return (

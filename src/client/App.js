@@ -19,7 +19,7 @@ const App = () => {
       </Header>
       { schools.length
         ? <Schools schools={schools} options={options} />
-        : <Login setSchools={setSchools} />
+        : <Login schools={schools} setSchools={setSchools} />
       }
     </div>
   );
