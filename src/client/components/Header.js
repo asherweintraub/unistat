@@ -15,7 +15,8 @@ const Header = (props) => {
           <hr className="w-full my-3"/>
           { props.children }
         </>
-        : null }
+        : null
+      }
     </Card>
   );
 }
