@@ -17,7 +17,15 @@ module.exports = {
       yellow: colors.amber,
       green: colors.emerald,
       blue: colors.blue,
-      red: colors.rose,
+      red: colors.rose
+    },
+    extend: {
+      gridTemplateColumns: {
+        'fit': 'repeat(auto-fit, minmax(0, 1fr))',
+        'fit-20': 'repeat(auto-fit, minmax(5rem, 1fr))',
+        'fit-28': 'repeat(auto-fit, minmax(7rem, 1fr))',
+        'fit-40': 'repeat(auto-fit, minmax(10rem, 1fr))'
+      }
     }
   }
 }
