@@ -7,25 +7,14 @@ const port = process.env.PORT || 3000;
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 puppeteer.use(StealthPlugin());
 
-const nicheLogin = async (browser, user, pass) => {
-  const page = await browser.newPage();
-  await page.goto('https://www.niche.com/account/login/');
-  await page.type('#loginEmail', user);
-  await page.type('#loginPassword', pass);
-  await page.click('button[type="submit"]');
-  await page.waitForNavigation();
-  await page.close();
-}
-
 app.get('/data', async (req, res) => {
   const browser = await puppeteer.launch({ headless: false, slowMo: 10 });
-  await nicheLogin(browser, req.query.username, req.query.password);
   const page = await browser.newPage();
-  await page.goto('https://www.niche.com/account/list/');
-  const schools = await page.$$('table.account-entity-table tbody tr');
+  await page.goto(`https://www.niche.com/list/${req.query.code}/`);
+  const schools = await page.$$('.shared-list-view__grid .shared-list-view__item');
   for (school of schools) {
 
-    let link = await school.$$eval('a.popover-item', nodes => nodes.find(el => el.innerText == 'View Profile').href);
+    let link = await school.evaluate(element => element.href);
     const page = await browser.newPage();
 
     await Promise.all([
