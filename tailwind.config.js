@@ -25,6 +25,9 @@ module.exports = {
         'fit-20': 'repeat(auto-fit, minmax(5rem, 1fr))',
         'fit-28': 'repeat(auto-fit, minmax(7rem, 1fr))',
         'fit-40': 'repeat(auto-fit, minmax(10rem, 1fr))'
+      },
+      gridColumnEnd: {
+        'full': '-1'
       }
     }
   }
